@@ -1,0 +1,166 @@
+Requirement Analysis
+Design
+Coding
+Testing
+Deployment 
+Maintenance
+
+QC is actually testing and only involved during testing part. Detecting defects. Product Oriented. Only involved during testing process
+QA building in quality and QC is testing on quality. Preventing defects. Always focus on process. Entire process
+QE People testing using Automation is QE. Write code to develop software. Automation tester for testing purpose. 
+
+Levels of Testing
+Unit Testing - Test small components in application. Testing by developers
+Integration Testing -  While combining multiple components
+System Testing - Testing overall functionality of application
+User Acceptance Testing (UAT) - Last level after system. Testers along with users.
+
+Unit - As soon as coding is completed, developers will write unit test
+
+Integration Testing = Performed between 2 or more modules
+checking data communication between modules
+White box testing technique
+
+Testing at application level and making sure all components are working
+
+2 Types of integration testing
+Incremental Integration Testing = Adding new modules and checking the functionality
+Top Down = Module added is the child of previous module
+Bottom Up = Module that is added is parent of the previous module
+Sandwich or Hybrid = Combination of both of methods above
+
+Non-Incremental Integration Testing = Integrate all modules in 1 shot. If there is error its hard to find cause of the defect
+
+System Testing - Functionality of application
+Requirement understanding
+
+Focuses on: 
+Unit Interface Testing - Website (Images, logo, checkbox, look and feel of application, navigation between pages)
+Functional Testing - (Actual functionality - test login, test balance, money transfer, generating report, etc)
+Non-Functional Testing - (Security, performance, compatibility, etc). Needs different environment
+Usability Testing - (How friendly is your application)
+
+UAT Testing - Conducted by customer or users. If everything is satisfied then they will accept product.
+Alpha Testing - Users will do testing in development environment. Install in customer environment and do some testing
+Beta Testing - 
+
+System Testing is done in QA environment: 
+
+GUI _ testing elements of application to insure they are there
+- Design document (test size, position and width)
+Error Messages (Validate only certain number is allowed)
+different sections of screen (Where and what is displayed)
+Font size (readable - type and size of font)
+zoom in and zoom out and make sure elements are not over lapping
+Testing icons are in correct position and where it should be displayed
+Spelling
+Allignment of text and colors of font
+scrollbars - check to see if its working
+checking disabled field. 
+Image is having less size and is clear
+Heading is alligned properly
+Color of hyperlink should have different color or link
+Button, text boxes, text area, drop down, links, etc
+
+Usability: providing help or context sensitive help testing. Should be able to get help. (help menu, pdf's etc)
+
+Functional Testing: Behvaiour of application. Working according to customer requirement
+object properties testing = Enabled/Disabled, dropbown - selecting 1 element at 1 time. List box (can select multiple elements), focused attribute - as soon as username is entered waiting on password
+Database Testing = where data will be stored/backend testing. DML operations are working or not. Basic operations are working on that. When you delete or add if its updated or not
+Insert, Update, Delete, Select. Submit data in UI and login to DB and view it on that side. All operations from UI should be affected in DB
+Table Level Validations - Column type, column length, number of columns. Relation between tables. Not done by QA
+Error Handling - Error messages. When you do invalid action or operation - application should display some message to users. Should be readable and in simple language understood by user.
+Calculations/Manipulations testing: Test calculation with valid and invalid calculations. Small number, big number, negative number, both negative, both positive, decimal number
+Links Existence & Execution: Where it is placed according to document. When I perform click action if it is navigating to correct page or not. 
+Internal Link(Navigate to same page different section), External Link(Navigate to another page) and Broken Link(No action) 
+Cookies & Sessions: Temporary file created by browser while browsing pages while browsing internet. If it is saving cookies
+Session - time slot created for your activity. Just browse application and do not do anything and it should give session is expired message
+
+Regression Testing: If you found bug in build 1 and they will release new build. Verify if the bug is fixed or not. If there is change verify it didn't affect other modules
+Bug fixes, new functionality and other changes or dependent modules
+Unit Regression: Changes only done by developers and bug reported and change area made by developers
+Regional: Modified and impacted module. Impact analysis meeting - identify impacted modules because of adding or deleting or bug fixes
+Full regression: Each and every module as mentioned by developers
+Retesting: Checking bug that was reported bug in previous build and close bug or reopen if the bug is not fixed
+
+Smoke and Sanity Testing: Basic functionality testing
+Smoke - Verify complete build or not (If there are any files missing). Install build and make sure its stable. Basic navigation is working or not. Initial days of testing lifecycle
+(Can be done by tester or developers)
+Sanity - focusing on high level functionality like login is working or not, links are working or not. After build is successful
+(Can only accept build if smoke and sanity testing is passing)
+
+Exploratory Testing: Application is ready but you do not have any documents. Test application by exploring functionality.
+(Understand and do the testing when their is no requirement)
+Drawbacks: MIsunderstand any feature or bug (vise versa).
+Ad-Hoc Testing: Testing without any test cases or business requirements. Have knowledge of application
+Monkey Testing: Without any prior knowledge of application. Gaming application
+
+Positive Testing: Testing with positive input if working or not
+Negative Testing: Testing with negative inputs. Accepts character or spaces or symbols (Instead of number)
+
+6-20 Characters And Alphabets
+Positive: 6, 20, 15, All Alphabets
+Negative: 5,21, Numbers, or symbols
+
+End-to-End Testing: Overall functionality of your application. Each and every function of the application. 
+
+Globalization: Support all languages.
+Localization: Supporting local language or not. 
+
+Test Design Techniques:
+Prepare data for testing and minimize data and improve coverage
+1. Equilance Class Partitioning: Example: Allows 1-200. Divide into classes. Test data before 1 and after 200 and classes inside it. -100 to 0 (-50 invalid), 1-100 (30), 101-200(160), 201 - 300 (550 Invalid)
+Example allow only alphabtes: A-Z (valid), a-z (valid), Special Characters, Spaces and Numbers (Invalid)
+
+2. Boundary Value Analysis: Boundary of values. Example: 18-35, 17(Invalid), 18, 19, 34,35 (Valid), 36 (Invalid)
+
+3. Decision Table based testing (If you have multiple conditions): Based on conditions, we have to use different set of actions. 
+Example: Transfering money to account which is approved and added. 
+Condition: Account Already Approved
+OTP matched
+Sufficient money in account
+
+Actions: 
+Transfer
+Show Insufficinet Amount
+Block transaction incase of suspicious account
+
+List out all conditions and actions in table. 
+
+4. State Transition (If you have multiple states) - Test Behvaiour of application. Example: Login Blocked after 3 Attempts
+State is transitioning after each input  After Attempt 3 - It should lock user out
+
+5. Error Guessing: Guessing based on experience. SUbmitting without entering anything. Not adding to cart. entering alphabtes into numeric field. Based on skills and experience
+
+Input domain Testing: Verify value inputed is correct or on in text box.
+
+ STLC:
+ 1. Requirement Analysis: Understand functionality
+ 2. Test Planning: What to test, how to test, when to test
+ Different scenarios we need and not need to test. What to conduct testing on, tools to use and when to test. 
+ Project Plan - includes timeline. When to start, when to deliver, budget, etc. Functional Requirement: different feature or functionality to test
+ Identify Resources: What sources or people can be used. Team Formation. Estimate time for testing (Smoke Testing, Sanity, bug tracking, etc).
+Test Plan - What to test what not to test, who is involved, time it will take. Review and sign off test plan. 
+Test Lead/Manager completes this phase
+ 
+ 3. Test Design: Writing test cases. Functional Requirement: What are features to be tested. Functionality of the document. Use cases: Describes requirement. Different flow of application
+ Prepare Scenarios, test cases, review test cases, tracebility matrix (Requirement id and test cases - mapping document. Mention all requirements and test cases you have written), Test case sign off (Developer, team lead and customer)
+ 
+ 4. Test Execution - Once you have build from development team. Smoke testing (Installation and basic functionality) and move to functionality. Based on priorty choose test cases. Prepare test reports 
+ (How many test cases were done, how many passed, how many failed, blocked). Identify defects. Prepare test log document
+ 
+ 5. Bug/Defect Reporting
+ 6. Test Closure : Conducted meeting. Test Report. All test cases were done and how many passed. How many bugs what was fixed and what is unfixed. No major defects and should not affect customer business flow
+ Test Summary: Everything combined as test summary report and hand out to customer
+ 
+ 
+
+
+
+
+
+
+
+
+
+
